@@ -19,14 +19,15 @@ jobs:
       run: |
         pip install -r requirements.txt
 
+    - name: Retrieve Data
+      run:  ./script/latest-smdg.py
     - name: Process Data
-      run: |
-        ./script/latest-smdg.py
-        ./script/prepare.sh
-        pytest .
-
+      run: ./script/prepare.sh
+    - name: Test function
+      run: pytest .
     - name: Commit files
       run: |
+        git add ./data
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git diff --quiet && git diff --staged --quiet || git commit -a -m "Auto-update of the data packages"
