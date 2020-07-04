@@ -43,11 +43,12 @@ jobs:
         APIKEY: ${{secrets.apikey}}
         CF_ORG: ${{secrets.cf_org}}
         CF_SPACE: ${{secrets.cf_space}}
+
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
       env:
-          GITHUB_TOKEN: ${{ github.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+          GITHUB_TOKEN: ${{ secrets.gh }} # This token is provided by Actions, you do not need to create your own token
       with:
           tag_name: ${{env.datum}}-${{ github.run_id }}
           release_name: Release ${{ github.run_id }}
