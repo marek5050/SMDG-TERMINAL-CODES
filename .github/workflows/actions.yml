@@ -28,7 +28,7 @@ jobs:
       run: pytest .
     - name: Commit files
       run: |
-        git add ./data
+        git add ./data ./README.md
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git diff --quiet && git diff --staged --quiet || git commit -a -m "Auto-update of the data packages"
