@@ -1,9 +1,7 @@
 # SMDG Terminal Codes 
 [![Build Status](https://travis-ci.org/marek5050/SMDG-TERMINAL-CODES.svg?branch=master)](https://travis-ci.org/marek5050/SMDG-TERMINAL-CODES)
 
-The repository contains the latest SMDG-TERMINAL-CODES information from the SMDG website. 
-http://www.smdg.org/smdg-code-lists/
-
+The repository contains the latest SMDG-TERMINAL-CODES information from the SMDG website.
 
 `SMDG-Terminal-Code-List-v20200701.csv`
 ```
@@ -16,3 +14,5 @@ http://www.smdg.org/smdg-code-lists/
 'AEJEA','','DPWJ4','DP WORLD JEBEL ALI - CT4','DP WORLD JEBEL ALI','N 25°01''57"','E 055°03''06"','','2019-06-04 00:00:00','','','',''
 'AEKHL','AEAUH','KCT','COSCO SHIPPING PORTS ABU DHABI TERMINAL','CSP ABU DHABI TERMINAL LLC (ABU DHABI PORTS/COSCO SHIPPING PORTS)','N 24°50''00"','E 054°40''00"','','2019-09-13 00:00:00','','http://www.cspadt.ae','CSP Abu Dhabi Terminal LLC, P.O Box 25530, Khalifa Port, Abu Dhabi, U.A.E.',''
 ```
+
+source: http://www.smdg.org/smdg-code-lists/
