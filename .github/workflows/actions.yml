@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron:  '0 1 * * *'
+    - cron:  '0 0 1 * *'
   push:
     branches:
       - master
@@ -18,7 +18,8 @@ jobs:
     - name: Install requirements
       run: |
         pip install -r requirements.txt
-
+        curl -L https://clis.ng.bluemix.net/download/bluemix-cli/latest/linux64 | tar -zx
+        chmod -R u+x ./Bluemix_CLI/bin
     - name: Retrieve Data
       run:  ./script/latest-smdg.py
     - name: Process Data
@@ -36,12 +37,19 @@ jobs:
       with:
         github_token: ${{ secrets.gh }}
 
-    - name: Install Cloud
-      run: |
-            curl -L https://clis.ng.bluemix.net/download/bluemix-cli/latest/linux64 | tar -zx
-            chmod -R u+x ./Bluemix_CLI/bin
     - run: ./script/deploy.sh
       env:
         APIKEY: ${{secrets.apikey}}
         CF_ORG: ${{secrets.cf_org}}
         CF_SPACE: ${{secrets.cf_space}}
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.gh }} # This token is provided by Actions, you do not need to create your own token
+      with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
