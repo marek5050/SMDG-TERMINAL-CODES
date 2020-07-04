@@ -11,7 +11,9 @@ def main(d):
     frame = pd.DataFrame([x[1:-1].split("','",12) for x in db.split('\n')[2:]],columns=names)
     resp = {"locations":[]}
     frame['latitude'] = frame['latitude'].str.replace("\'\'","'")
+    frame['latitude'] = frame['latitude'].str.replace('\"',"")
     frame['longitude'] = frame['longitude'].str.replace("\'\'","'")
+    frame['longitude'] = frame['longitude'].str.replace('\"',"")
     if unlocode:
         resp["locations"] = frame[frame['unlocode'].str.contains(unlocode)==True][:20].to_dict("records")
     elif terminal_code:
