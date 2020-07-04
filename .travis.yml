@@ -8,6 +8,7 @@ before_script:
 script:
         - ./script/latest-smdg.py
         - ./script/prepare.sh
+        - pytest .
         - ./script/deploy.sh
 
 

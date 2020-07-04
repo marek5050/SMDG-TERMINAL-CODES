@@ -17,7 +17,7 @@ def test_main():
              "last_change":"",
              "valid_from":"2004-05-31 00:00:00",
              "valid_until":"",
-             'terminal_website': 'https://www..transnetportterminals..net/pages/default..aspx',
+             'terminal_website': 'https://www.transnetportterminals.net/pages/default.aspx',
              "terminal_address":"",
              "remarks":""}
         ]
