@@ -23,9 +23,9 @@ jobs:
 
     - name: Process Data
       run: |
-        - ./script/latest-smdg.py
-        - ./script/prepare.sh
-        - pytest .
+        ./script/latest-smdg.py
+        ./script/prepare.sh
+        pytest .
 
     - name: Commit files
       run: |
