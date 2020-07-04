@@ -4,7 +4,7 @@
 The repository contains the latest SMDG-TERMINAL-CODES information from the SMDG website.
 source: http://www.smdg.org/smdg-code-lists/
 
-Last updated:  Sat Jul 4 17:32:39 UTC 2020
+Last updated:  Sat Jul 4 17:44:35 UTC 2020
 
 *SMDG-Terminal-Code-List-v20200701.csv*
 ```
