@@ -17,9 +17,9 @@ jobs:
         architecture: x64
     - name: Install requirements
       run: |
-        - curl -L https://clis.ng.bluemix.net/download/bluemix-cli/latest/linux64 | tar -zx
-        - chmod -R u+x ./Bluemix_CLI/bin
-        - pip install -r requirements.txt
+        curl -L https://clis.ng.bluemix.net/download/bluemix-cli/latest/linux64 | tar -zx
+        chmod -R u+x ./Bluemix_CLI/bin
+        pip install -r requirements.txt
 
     - name: Process Data
       run: |
