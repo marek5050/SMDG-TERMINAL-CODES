@@ -20,7 +20,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Retrieve Data
-      run:  python3 ./script/latest-smdg.py
+      run:  ./script/latest-smdg.py
     - name: Process Data
       run: ./script/prepare.sh
     - name: Test function

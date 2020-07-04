@@ -9,8 +9,12 @@ from requests_html import HTMLSession
 link = "http://www.smdg.org/smdg-code-lists/"
 base = "http://www.smdg.org"
 session = HTMLSession()
+import logging
+logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+# logging.warning('is when this event was logged.')
 
 if __name__ == "__main__":
+    logging.info("start")
     r = session.get(link)
 
     all_links = r.html.links
@@ -26,3 +30,4 @@ if __name__ == "__main__":
         df["Terminal Company Name"].replace("\n", '', inplace=True,regex=True )
         df.replace(r'\\n',' ', regex=True, inplace=True)
         df.to_csv("data/%s.csv"%filename, index=False,encoding=sys.getfilesystemencoding(), quoting=csv.QUOTE_ALL, quotechar="'")
+    logging.info("done")
