@@ -35,16 +35,11 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.gh }}
-  deploy:
-    needs: update
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - name: Install requirements
+
+    - name: Install Cloud
       run: |
             curl -L https://clis.ng.bluemix.net/download/bluemix-cli/latest/linux64 | tar -zx
             chmod -R u+x ./Bluemix_CLI/bin
-
     - run: ./script/deploy.sh
       env:
         APIKEY: ${{secrets.apikey}}
