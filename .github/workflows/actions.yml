@@ -20,7 +20,6 @@ jobs:
         pip install -r requirements.txt
         curl -L https://clis.ng.bluemix.net/download/bluemix-cli/latest/linux64 | tar -zx
         chmod -R u+x ./Bluemix_CLI/bin
-        echo "::set-env name=DATUM::`date +'%Y%m%d%H%M%S'`"
     - name: Retrieve Data
       run:  ./script/latest-smdg.py
     - name: Process Data
